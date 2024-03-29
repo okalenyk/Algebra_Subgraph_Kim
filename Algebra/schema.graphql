@@ -282,6 +282,17 @@ type PositionSnapshot @entity {
   # internal vars needed for fee computation
   feeGrowthInside0LastX128: BigInt!
   feeGrowthInside1LastX128: BigInt!
+  # lower tick of the position
+  tickLower: Tick!
+  # upper tick of the position
+  tickUpper: Tick!
+  # current price tracker at end of period
+  poolSqrtPrice: BigInt!
+  # current pool tick at end of period
+  poolTick: BigInt
+  # derived price in Matic
+  derivedMaticToken0: BigDecimal!
+  derivedMaticToken1: BigDecimal!
 }
 
 type Transaction @entity {
