@@ -6,7 +6,7 @@ import {
   NonfungiblePositionManager,
   Transfer
 } from '../types/NonfungiblePositionManager/NonfungiblePositionManager'
-import { Pool, Position, PositionSnapshot, Token} from '../types/schema'
+import { Bundle, Pool, Position, PositionSnapshot, Token} from '../types/schema'
 import { ADDRESS_ZERO, factoryContract, ZERO_BD, ZERO_BI, pools_list} from '../utils/constants'
 import { Address, BigInt, ethereum, log } from '@graphprotocol/graph-ts'
 import { convertTokenToDecimal, loadTransaction } from '../utils'
@@ -98,6 +98,9 @@ function savePositionSnapshot(position: Position, event: ethereum.Event): void {
 
   positionSnapshot.derivedMaticToken0 = token0.derivedMatic
   positionSnapshot.derivedMaticToken1 = token1.derivedMatic
+
+  let bundle = Bundle.load('1')!
+  positionSnapshot.maticPriceUSD = bundle.maticPriceUSD
 
   if(pools_list.includes(position.pool)){
     positionSnapshot.depositedToken0 = position.depositedToken1

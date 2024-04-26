@@ -293,6 +293,8 @@ type PositionSnapshot @entity {
   # derived price in Matic
   derivedMaticToken0: BigDecimal!
   derivedMaticToken1: BigDecimal!
+  # price of Matic in usd
+  maticPriceUSD: BigDecimal!
 }
 
 type Transaction @entity {
