@@ -5,26 +5,18 @@ import { BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 import { exponentToBigDecimal, safeDiv } from '../utils/index'
 
 const WMatic_ADDRESS = '0x4200000000000000000000000000000000000006'
-const USDC_WMatic_03_POOL = '0x468cc91df6f669cae6cdce766995bd7874052fbc'
+const USDC_WMatic_03_POOL = '0xbbd7d3f242fe8f4eb318c96b2fac0c459ecca908'
 
 // token where amounts should contribute to tracked volume and liquidity
 // usually tokens that many tokens are paired with s
 export let WHITELIST_TOKENS: string[] = [
   '0x4200000000000000000000000000000000000006', // WMATIC
-  '0xd988097fb8612cc24eec14542bc03424c656005f', // USDC
-  '0xf0f161fda2712db8b566946122a5af183995e2ed', // USDT
-  '0xcdd475325d6f564d27247d1dddbb0dac6fa0a5cf', // WBTC
-  '0x3e7ef8f50246f725885102e8238cbba33f276747', // UNI
-  '0x9e5aac1ba1a2e6aed6b32689dfcf62a509ca96f3', // SNX
-  '0x50c5725949a6f0c72e6c4a641f24049a917db0cb', // LINK
-  '0xe7798f023fc62146e8aa1b36da45fb70855a77ea', // DAI
-  '0xd08a2917653d4e460893203471f0000826fb4034', // BAL
-  '0x7c6b91d9be155a6db01f749217d76ff02a7227f2', // AAVE
-  '0x12d8ce035c5de3ce39b1fdd4c1d5a745eaba3b8c', // ankrETH
+  '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913', // USDC
+  '0x5dc25aa049837b696d1dc0f966ac8df1491f819b', // KIM
   '0x2416092f143378750bb29b79ed961ab195cceea5', // ezETH
-  '0x028227c4dd1e5419d11bb6fa6e661920c519d4f5', // weETH'
-  '0x80137510979822322193fc997d400d5a6c747bf7', // STONE'
-  '0x9e0d7d79735e1c63333128149c7b616a0dc0bbdb', // pxETH',
+  '0xfde4c96c8593536e31f229ea8f37b2ada2699bb2', // USDT
+  '0x50c5725949a6f0c72e6c4a641f24049a917db0cb', // DAI
+  '0x04c0599ae5a44757c0af6f9ec3b93da8976c150a', // weETH.base
 ]
 
 let MINIMUM_Matic_LOCKED = BigDecimal.fromString('0.01')
